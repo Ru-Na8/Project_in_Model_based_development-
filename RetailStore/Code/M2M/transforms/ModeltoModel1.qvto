@@ -1,0 +1,59 @@
+modeltype MM1 uses "http://www.example.org/mm1";
+modeltype MM2 uses "http://www.example.org/mm2";
+
+transformation MM1toMM2(in srcModel: MM1, out targetModel: MM2);
+
+main() {
+    log("Starting transformation...");
+
+    -- Create the root OrderModel
+    var rootOrderModel : MM2::OrderModel;
+    rootOrderModel := object MM2::OrderModel {
+        orders := srcModel.objectsOfType(MM1::RetailStore)->map createOrder();
+        locations := srcModel.objectsOfType(MM1::Location)->map createLocation();
+    };
+
+
+    log("Transformation completed.");
+}
+
+-- Mapping for RetailStore to Order
+mapping MM1::RetailStore::createOrder() : MM2::Order {
+    log("Mapping RetailStore: " + self.name);
+
+    orderID := self.storeID;
+    name := self.name;
+
+    -- Map location to delivery details
+    if (self.location <> null) {
+        deliverydetails := self.location.map createDeliveryDetails();
+    } else {
+        log("No location found for RetailStore: " + self.name);
+    };
+
+    if (self.stockesIteams->notEmpty()) {
+        orderiteam := self.stockesIteams->map createOrderIteam();
+        log("Mapped " + orderiteam->size().toString() + " items for Order: " + self.name);
+    } else {
+        log("No items found for RetailStore: " + self.name);
+    };
+}
+
+mapping MM1::Location::createDeliveryDetails() : MM2::DeliveryDetails {
+    deliveryAddress := self.address + ", " + self.city + ", " + self.postalCode.toString();
+    deliveryDate := null; 
+}
+
+mapping MM1::Iteam::createOrderIteam() : MM2::OrderIteam {
+    log("Mapping Item: " + self.name + ", Quantity: " + self.quantity.toString());
+
+    iteamName := self.name;
+    quantity := self.quantity;
+}
+
+mapping MM1::Location::createLocation() : MM2::Location {
+    log("Mapping Location: " + self.address);
+
+    orderID := self.address;
+    address := self.address + ", " + self.city + ", " + self.postalCode.toString();
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mm6_1:RoutesModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mm6_1="http://www.example.org/mm6_1">
+  <routes from="Sveav&#xe4;gen 45" to="Klarabergsviadukten 90" travelTime="13.142438598457197" distance="6.5712192992285985"/>
+  <routes from="Sveav&#xe4;gen 45" to="Klarabergsviadukten 90" travelTime="23.54308528710691" distance="11.771542643553454"/>
+  <routes from="Klarabergsviadukten 90" to="Sveav&#xe4;gen 45" travelTime="19.07889253623025" distance="9.539446268115125"/>
+  <routes from="Klarabergsviadukten 90" to="Sveav&#xe4;gen 45" travelTime="48.74547320589648" distance="24.37273660294824"/>
+  <location orderID="Sveav&#xe4;gen 45" address="Sveav&#xe4;gen 45, Stockholm, 10250"/>
+  <location orderID="Klarabergsviadukten 90" address="Klarabergsviadukten 90, Stockholm, 10128"/>
+  <shortestPaths from="Klarabergsviadukten 90" to="Sveav&#xe4;gen 45" travelTime="19.07889253623025" distance="9.539446268115125"/>
+  <shortestPaths from="Sveav&#xe4;gen 45" to="Klarabergsviadukten 90" travelTime="13.142438598457197" distance="6.5712192992285985"/>
+  <orders orderID="Store_2" name="Retail Store 2" deliveryAddress="Sveav&#xe4;gen 45, Stockholm, 10250" deliveryDate="2025-01-31T13:12:54.799+0100">
+    <items itemName="Invictus" quantity="15"/>
+    <items itemName="Olymp&#xe9;a" quantity="10"/>
+    <items itemName="Scandal" quantity="30"/>
+    <items itemName="Boss Bottled" quantity="12"/>
+  </orders>
+  <orders orderID="Store_1" name="Retail Store 1" deliveryAddress="Klarabergsviadukten 90, Stockholm, 10128" deliveryDate="2025-01-31T13:12:54.803+0100">
+    <items itemName="MyWay" quantity="20"/>
+    <items itemName="Libre" quantity="5"/>
+    <items itemName="Jadore" quantity="25"/>
+    <items itemName="Paradox" quantity="5"/>
+  </orders>
+</mm6_1:RoutesModel>

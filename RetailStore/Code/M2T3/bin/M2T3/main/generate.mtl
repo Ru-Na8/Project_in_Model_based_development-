@@ -1,0 +1,125 @@
+[module generate('http://www.example.org/mm6_1')/]
+
+[template public generateElement(model : ecore::EObject)]
+[comment @main/]
+
+[if (model.eClass().name = 'RoutesModel')]
+[file ('Routes.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Optimized Delivery Routes Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { text-align: center; color: #333; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        th { background-color: #f4f4f4; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #e0f7fa; }
+        caption { font-weight: bold; margin-bottom: 10px; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1>Optimized Delivery Routes Report</h1>
+
+    <!-- Locations -->
+    [if (model.eGet('location')->notEmpty())]
+    <h2>Locations</h2>
+    <table>
+        <tr><th>Order ID</th><th>Address</th></tr>
+        [for (location : ecore::EObject | model.eGet('location'))]
+        <tr><td>[location.eGet('orderID')/]</td><td>[location.eGet('address')/]</td></tr>
+        [/for]
+    </table>
+    [else]
+    <p><strong>Debug: No locations found in the model.</strong></p>
+    [/if]
+
+    <!-- Routes -->
+   [if (model.eGet('routes')->notEmpty())]
+	<h2>All Routes</h2>
+	<table>
+	    <tr><th>From</th><th>To</th><th>Distance (km)</th><th>Travel Time (minutes)</th></tr>
+	    [for (route : ecore::EObject | model.eGet('routes'))]
+	    <tr>
+	        <td>[route.eGet('from')/]</td>
+	        <td>[route.eGet('to')/]</td>
+	        <td>[route.eGet('distance')/]</td>
+	        <td>[route.eGet('travelTime')/]</td>
+	    </tr>
+        <p><strong>Debug Route: [route.eGet('from')/] → [route.eGet('to')/], Distance: [route.eGet('distance')/], Time: [route.eGet('travelTime')/]</strong></p>
+
+	    [/for]
+	</table>
+	<p><strong>Debug: Total Routes Found = [model.eGet('routes')->size()/]</strong></p>
+	[else]
+	<p><strong>Debug: No routes found in the model.</strong></p>
+
+	[/if]
+
+    <!-- Shortest Paths -->
+    [if (model.eGet('shortestPaths')->notEmpty())]
+    <h2>Shortest Paths</h2>
+    <table>
+        <tr><th>From</th><th>To</th><th>Distance (km)</th><th>Travel Time (minutes)</th></tr>
+        [for (path : ecore::EObject | model.eGet('shortestPaths'))]
+        <tr>
+            <td>[path.eGet('from')/]</td>
+            <td>[path.eGet('to')/]</td>
+            <td>[path.eGet('distance')/]</td>
+            <td>[path.eGet('travelTime')/]</td>
+        </tr>
+        [/for]
+    </table>
+    [else]
+    <p><strong>Debug: No shortest paths found in the model.</strong></p>
+    [/if]
+
+    <!-- Orders -->
+    [if (model.eGet('orders')->notEmpty())]
+    <h2>Orders</h2>
+    <table>
+        <tr><th>Order ID</th><th>Store Name</th><th>Delivery Address</th><th>Delivery Date</th></tr>
+        [for (order : ecore::EObject | model.eGet('orders'))]
+        <tr>
+            <td>[order.eGet('orderID')/]</td>
+            <td>[order.eGet('name')/]</td>
+            <td>[order.eGet('deliveryAddress')/]</td>
+            <td>[order.eGet('deliveryDate')/]</td>
+        </tr>
+        [/for]
+    </table>
+    [else]
+    <p><strong>Debug: No orders found in the model.</strong></p>
+    [/if]
+
+    <!-- Items Table -->
+    [if (model.eGet('orders')->notEmpty())]
+    <h2>Order Items</h2>
+    [for (order : ecore::EObject | model.eGet('orders'))]
+    <h3>Items for Order: [order.eGet('orderID')/]</h3>
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+        </tr>
+        [if (order.eGet('items')->notEmpty())]
+        [for (item : ecore::EObject | order.eGet('items'))]
+        <tr>
+            <td>[item.eGet('itemName')/]</td>
+            <td>[item.eGet('quantity')/]</td>
+        </tr>
+        [/for]
+        [/if]
+    </table>
+    [/for]
+    [else]
+    <p><strong>Debug: No order items found in the model.</strong></p>
+    [/if]
+
+</body>
+</html>
+[/file]
+[/if]
+[/template]

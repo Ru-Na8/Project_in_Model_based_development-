@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/MM1/src-gen" creationIcons="false" editDirectory="/MM1.edit/src-gen"
+    editorDirectory="/MM1.editor/src-gen" modelPluginID="MM1" modelName="Mm1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>mm1.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Mm1" disposableProviderFactory="true" ecorePackage="mm1.ecore#/">
+    <genClasses ecoreClass="mm1.ecore#//RetailStore">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//RetailStore/storeID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//RetailStore/name"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference mm1.ecore#//RetailStore/location"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference mm1.ecore#//RetailStore/stockesIteams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mm1.ecore#//RetailStore/deliveryWindows"/>
+    </genClasses>
+    <genClasses ecoreClass="mm1.ecore#//Iteam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Iteam/itemID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Iteam/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Iteam/quantity"/>
+    </genClasses>
+    <genClasses ecoreClass="mm1.ecore#//Supplier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Supplier/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Supplier/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Supplier/orderID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Supplier/amount"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mm1.ecore#//Supplier/suppliedIteams"/>
+    </genClasses>
+    <genClasses ecoreClass="mm1.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Location/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Location/postalCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Location/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//Location/buildingNumber"/>
+    </genClasses>
+    <genClasses ecoreClass="mm1.ecore#//TimeInterval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//TimeInterval/startTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mm1.ecore#//TimeInterval/endTime"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

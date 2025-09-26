@@ -1,0 +1,181 @@
+{
+    "distanceMatrix": [
+        {
+            "travelTime": 10.156762930114297,
+            "distance": 5.078381465057149,
+            "from": "Sveavägen 45",
+            "to": "Klarabergsviadukten 90"
+        },
+        {
+            "travelTime": 28.562198144205944,
+            "distance": 14.281099072102972,
+            "from": "Sveavägen 45",
+            "to": "Klarabergsviadukten 90"
+        },
+        {
+            "travelTime": 13.475523966198612,
+            "distance": 6.737761983099306,
+            "from": "Klarabergsviadukten 90",
+            "to": "Sveavägen 45"
+        },
+        {
+            "travelTime": 25.04564051275831,
+            "distance": 12.522820256379156,
+            "from": "Klarabergsviadukten 90",
+            "to": "Sveavägen 45"
+        }
+    ],
+    "optimalRoutes": [
+        {
+            "travelTime": 10.156762930114297,
+            "distance": 5.078381465057149,
+            "from": "Sveavägen 45",
+            "to": "Klarabergsviadukten 90"
+        },
+        {
+            "travelTime": 28.562198144205944,
+            "distance": 14.281099072102972,
+            "from": "Sveavägen 45",
+            "to": "Klarabergsviadukten 90"
+        },
+        {
+            "travelTime": 13.475523966198612,
+            "distance": 6.737761983099306,
+            "from": "Klarabergsviadukten 90",
+            "to": "Sveavägen 45"
+        },
+        {
+            "travelTime": 25.04564051275831,
+            "distance": 12.522820256379156,
+            "from": "Klarabergsviadukten 90",
+            "to": "Sveavägen 45"
+        }
+    ],
+    "shortestPaths": [
+        {
+            "shortestPaths": [{
+                "travelTime": 13.475523966198612,
+                "distance": 6.737761983099306,
+                "from": "Klarabergsviadukten 90",
+                "to": "Sveavägen 45"
+            }],
+            "from": "Klarabergsviadukten 90"
+        },
+        {
+            "shortestPaths": [{
+                "travelTime": 10.156762930114297,
+                "distance": 5.078381465057149,
+                "from": "Sveavägen 45",
+                "to": "Klarabergsviadukten 90"
+            }],
+            "from": "Sveavägen 45"
+        }
+    ],
+    "locations": [
+        {
+            "address": "Sveavägen 45, Stockholm, 10250",
+            "orderID": "Sveavägen 45"
+        },
+        {
+            "address": "Klarabergsviadukten 90, Stockholm, 10128",
+            "orderID": "Klarabergsviadukten 90"
+        }
+    ],
+    "orders": [
+        {
+            "orderID": "Store_2",
+            "name": "Retail Store 2",
+            "deliveryDetails": {
+                "date": "",
+                "address": "Sveavägen 45, Stockholm, 10250"
+            },
+            "items": [
+                {
+                    "itemName": "Invictus",
+                    "quantity": 15,
+                    "orderID": "Store_2"
+                },
+                {
+                    "itemName": "Olympéa",
+                    "quantity": 10,
+                    "orderID": "Store_2"
+                },
+                {
+                    "itemName": "Scandal",
+                    "quantity": 30,
+                    "orderID": "Store_2"
+                },
+                {
+                    "itemName": "Boss Bottled",
+                    "quantity": 12,
+                    "orderID": "Store_2"
+                }
+            ]
+        },
+        {
+            "orderID": "Store_1",
+            "name": "Retail Store 1",
+            "deliveryDetails": {
+                "date": "",
+                "address": "Klarabergsviadukten 90, Stockholm, 10128"
+            },
+            "items": [
+                {
+                    "itemName": "MyWay",
+                    "quantity": 20,
+                    "orderID": "Store_1"
+                },
+                {
+                    "itemName": "Libre",
+                    "quantity": 5,
+                    "orderID": "Store_1"
+                },
+                {
+                    "itemName": "Jadore",
+                    "quantity": 25,
+                    "orderID": "Store_1"
+                },
+                {
+                    "itemName": "Paradox",
+                    "quantity": 5,
+                    "orderID": "Store_1"
+                }
+            ]
+        }
+    ],
+    "constraints": {
+        "deliveryConstraints": [
+            {
+                "constraintID": "DeliveryConstraint_1",
+                "deliveryTimeFrameStart": "",
+                "maximumVolume": 50,
+                "maximumWeight": 100,
+                "deliveryTimeFrameEnd": ""
+            },
+            {
+                "constraintID": "DeliveryConstraint_2",
+                "deliveryTimeFrameStart": "",
+                "maximumVolume": 75,
+                "maximumWeight": 150,
+                "deliveryTimeFrameEnd": ""
+            },
+            {
+                "constraintID": "DeliveryConstraint_3",
+                "deliveryTimeFrameStart": "",
+                "maximumVolume": 100,
+                "maximumWeight": 200,
+                "deliveryTimeFrameEnd": ""
+            }
+        ],
+        "orderConstraints": [
+            {
+                "constraintID": "Constraint_Store_1",
+                "priorityLevel": 1
+            },
+            {
+                "constraintID": "Constraint_Store_2",
+                "priorityLevel": 2
+            }
+        ]
+    }
+}

@@ -1,0 +1,37 @@
+modeltype MM2 uses "http://www.example.org/mm2";
+modeltype MM3 uses "http://www.example.org/mm3";
+modeltype MM4 uses "http://www.example.org/mm4";
+
+transformation MM2MM3ToMM4(in srcModel2: MM2, in srcModel3: MM3, out targetModel4: MM4);
+
+main() {
+    log("Starting transformation from MM2 and MM3 to MM4...");
+
+    srcModel2.objectsOfType(MM2::Order)->map createOrderConstraint();
+
+    srcModel3.objectsOfType(MM3::Vehicle)->map createDeliveryConstraint();
+
+    log("Transformation completed.");
+}
+
+mapping MM2::Order::createOrderConstraint() : MM4::OrderConstraint {
+    constraintID := 'Constraint_' + self.orderID;
+	priorityLevel := if self.deliverydetails.deliveryAddress <> null and self.deliverydetails.deliveryAddress.indexOf('VIP') >= 0 then 1 else 2 endif;
+
+    deliveryconstraint += self.orderiteam->map createOrderItemDeliveryConstraint();
+}
+mapping MM2::OrderIteam::createOrderItemDeliveryConstraint() : MM4::DeliveryConstraint {
+    constraintID := 'Constraint_Item_' + self.iteamName;
+    maximumWeight := self.quantity * 10; 
+    maximumVolume := self.quantity * 5;  
+}
+
+mapping MM3::Vehicle::createDeliveryConstraint() : MM4::DeliveryConstraint {
+    constraintID := 'Constraint_' + self.vehicleID;
+    maximumWeight := self.capacity.weight;
+    maximumVolume := self.capacity.volume;
+    deliveryTimeFrameStart := self.availability.availabilityStart;
+    deliveryTimeFrameEnd := self.availability.availabilityEnd;
+}
+
+

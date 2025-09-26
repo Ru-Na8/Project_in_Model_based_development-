@@ -1,0 +1,63 @@
+{
+    "orders": 
+        {
+            "orderID": "Store_2",
+            "name": "Retail Store 2",
+            "deliveryDetails": {
+                "address": "Sveavägen 45, Stockholm, 10250",
+                "date": """"
+            },
+            "items": 
+                {
+                    "itemName": "Invictus",
+                    "quantity": 15
+                }
+,
+                {
+                    "itemName": "Olympéa",
+                    "quantity": 10
+                }
+,
+                {
+                    "itemName": "Scandal",
+                    "quantity": 30
+                }
+,
+                {
+                    "itemName": "Boss Bottled",
+                    "quantity": 12
+                }
+            ]
+        }
+,
+        {
+            "orderID": "Store_1",
+            "name": "Retail Store 1",
+            "deliveryDetails": {
+                "address": "Klarabergsviadukten 90, Stockholm, 10128",
+                "date": """"
+            },
+            "items": 
+                {
+                    "itemName": "MyWay",
+                    "quantity": 20
+                }
+,
+                {
+                    "itemName": "Libre",
+                    "quantity": 5
+                }
+,
+                {
+                    "itemName": "Jadore",
+                    "quantity": 25
+                }
+,
+                {
+                    "itemName": "Paradox",
+                    "quantity": 5
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mm5:DistanceMatrix xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mm5="http://www.example.org/mm5">
+  <location orderID="Sveav&#xe4;gen 45" address="Sveav&#xe4;gen 45, Stockholm, 10250"/>
+  <location orderID="Klarabergsviadukten 90" address="Klarabergsviadukten 90, Stockholm, 10128"/>
+  <distance distance="6.5712192992285985" travelTime="13.142438598457197" from="//@location.0" to="//@location.1" routeID="R1"/>
+  <distance distance="11.771542643553454" travelTime="23.54308528710691" from="//@location.0" to="//@location.1" routeID="R2"/>
+  <distance distance="9.539446268115125" travelTime="19.07889253623025" from="//@location.1" to="//@location.0" routeID="R1"/>
+  <distance distance="24.37273660294824" travelTime="48.74547320589648" from="//@location.1" to="//@location.0" routeID="R2"/>
+</mm5:DistanceMatrix>

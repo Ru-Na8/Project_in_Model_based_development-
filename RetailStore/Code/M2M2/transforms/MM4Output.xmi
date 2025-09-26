@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mm4="http://www.example.org/mm4" xsi:schemaLocation="http://www.example.org/mm4 ../../MM4/model/mm4.ecore">
+  <mm4:OrderConstraint priorityLevel="1" constraintID="Constraint_Store_2">
+    <deliveryconstraint constraintID="Constraint_Item_Invictus" maximumWeight="150" maximumVolume="75"/>
+    <deliveryconstraint constraintID="Constraint_Item_Olympéa" maximumWeight="100" maximumVolume="50"/>
+    <deliveryconstraint constraintID="Constraint_Item_Scandal" maximumWeight="300" maximumVolume="150"/>
+    <deliveryconstraint constraintID="Constraint_Item_Boss Bottled" maximumWeight="120" maximumVolume="60"/>
+  </mm4:OrderConstraint>
+  <mm4:OrderConstraint priorityLevel="1" constraintID="Constraint_Store_1">
+    <deliveryconstraint constraintID="Constraint_Item_MyWay" maximumWeight="200" maximumVolume="100"/>
+    <deliveryconstraint constraintID="Constraint_Item_Libre" maximumWeight="50" maximumVolume="25"/>
+    <deliveryconstraint constraintID="Constraint_Item_Jadore" maximumWeight="250" maximumVolume="125"/>
+    <deliveryconstraint constraintID="Constraint_Item_Paradox" maximumWeight="50" maximumVolume="25"/>
+  </mm4:OrderConstraint>
+  <mm4:DeliveryConstraint constraintID="Constraint_Vehicle_1" maximumWeight="200" maximumVolume="100"/>
+  <mm4:DeliveryConstraint constraintID="Constraint_Vehicle_2" maximumWeight="50" maximumVolume="25"/>
+</xmi:XMI>

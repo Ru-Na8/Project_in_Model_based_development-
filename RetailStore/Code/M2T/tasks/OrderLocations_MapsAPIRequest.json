@@ -1,0 +1,13 @@
+{
+    "locations": [
+        {
+            "orderID": "Sveavägen 45",
+            "address": "Sveavägen 45, Stockholm, 10250"
+        }
+,
+        {
+            "orderID": "Klarabergsviadukten 90",
+            "address": "Klarabergsviadukten 90, Stockholm, 10128"
+        }
+    ]
+}

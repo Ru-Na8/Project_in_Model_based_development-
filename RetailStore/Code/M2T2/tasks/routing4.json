@@ -1,0 +1,40 @@
+{
+    "constraints": {
+        "deliveryConstraints": [
+            {
+                "constraintID": "DeliveryConstraint_1",
+                "maximumWeight": 100,
+                "maximumVolume": 50,
+                "deliveryTimeFrameStart": "",
+                "deliveryTimeFrameEnd": ""
+            }
+,
+            {
+                "constraintID": "DeliveryConstraint_2",
+                "maximumWeight": 150,
+                "maximumVolume": 75,
+                "deliveryTimeFrameStart": "",
+                "deliveryTimeFrameEnd": ""
+            }
+,
+            {
+                "constraintID": "DeliveryConstraint_3",
+                "maximumWeight": 200,
+                "maximumVolume": 100,
+                "deliveryTimeFrameStart": "",
+                "deliveryTimeFrameEnd": ""
+            }
+        ],
+        "orderConstraints": [
+            {
+                "constraintID": "Constraint_Store_1",
+                "priorityLevel": 1
+            }
+,
+            {
+                "constraintID": "Constraint_Store_2",
+                "priorityLevel": 2
+            }
+        ]
+    }
+}

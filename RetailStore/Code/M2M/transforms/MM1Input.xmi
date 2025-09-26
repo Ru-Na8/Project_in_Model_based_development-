@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mm1="http://www.example.org/mm1" xsi:schemaLocation="http://www.example.org/mm1 ../../MM1/model/mm1.ecore">
+  <mm1:RetailStore storeID="Store_1" name="Retail Store 1" deliveryWindows="/1">
+    <location address="Klarabergsviadukten 90" postalCode="10128" city="Stockholm"/>
+    <stockesIteams itemID="Item_1" name="MyWay" quantity="20"/>
+    <stockesIteams itemID="Item_2" name="Libre" quantity="5"/>
+    <stockesIteams itemID="Item_3" name="Jadore" quantity="25"/>
+    <stockesIteams itemID="Item_4" name="Paradox" quantity="5"/>
+  </mm1:RetailStore>
+  <mm1:TimeInterval/>
+  <mm1:RetailStore storeID="Store_2" name="Retail Store 2" deliveryWindows="/3">
+    <location address="Sveavägen 45" postalCode="10250" city="Stockholm"/>
+    <stockesIteams itemID="Item_5" name="Invictus" quantity="15"/>
+    <stockesIteams itemID="Item_6" name="Olympéa" quantity="10"/>
+    <stockesIteams itemID="Item_7" name="Scandal" quantity="30"/>
+    <stockesIteams itemID="Item_8" name="Boss Bottled" quantity="12"/>
+  </mm1:RetailStore>
+  <mm1:TimeInterval/>
+</xmi:XMI>

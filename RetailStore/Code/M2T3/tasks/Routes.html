@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Optimized Delivery Routes Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { text-align: center; color: #333; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        th { background-color: #f4f4f4; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #e0f7fa; }
+        caption { font-weight: bold; margin-bottom: 10px; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1>Optimized Delivery Routes Report</h1>
+
+    <!-- Locations -->
+    <h2>Locations</h2>
+    <table>
+        <tr><th>Order ID</th><th>Address</th></tr>
+        <tr><td>Sveavägen 45</td><td>Sveavägen 45, Stockholm, 10250</td></tr>
+        <tr><td>Klarabergsviadukten 90</td><td>Klarabergsviadukten 90, Stockholm, 10128</td></tr>
+    </table>
+
+    <!-- Routes -->
+	<h2>All Routes</h2>
+	<table>
+	    <tr><th>From</th><th>To</th><th>Distance (km)</th><th>Travel Time (minutes)</th></tr>
+	    <tr>
+	        <td>Sveavägen 45</td>
+	        <td>Klarabergsviadukten 90</td>
+	        <td>6.5712192992285985</td>
+	        <td>13.142438598457197</td>
+	    </tr>
+        <p><strong>Debug Route: Sveavägen 45 → Klarabergsviadukten 90, Distance: 6.5712192992285985, Time: 13.142438598457197</strong></p>
+
+	    <tr>
+	        <td>Sveavägen 45</td>
+	        <td>Klarabergsviadukten 90</td>
+	        <td>11.771542643553454</td>
+	        <td>23.54308528710691</td>
+	    </tr>
+        <p><strong>Debug Route: Sveavägen 45 → Klarabergsviadukten 90, Distance: 11.771542643553454, Time: 23.54308528710691</strong></p>
+
+	    <tr>
+	        <td>Klarabergsviadukten 90</td>
+	        <td>Sveavägen 45</td>
+	        <td>9.539446268115125</td>
+	        <td>19.07889253623025</td>
+	    </tr>
+        <p><strong>Debug Route: Klarabergsviadukten 90 → Sveavägen 45, Distance: 9.539446268115125, Time: 19.07889253623025</strong></p>
+
+	    <tr>
+	        <td>Klarabergsviadukten 90</td>
+	        <td>Sveavägen 45</td>
+	        <td>24.37273660294824</td>
+	        <td>48.74547320589648</td>
+	    </tr>
+        <p><strong>Debug Route: Klarabergsviadukten 90 → Sveavägen 45, Distance: 24.37273660294824, Time: 48.74547320589648</strong></p>
+
+	</table>
+	<p><strong>Debug: Total Routes Found = 1</strong></p>
+
+    <!-- Shortest Paths -->
+    <h2>Shortest Paths</h2>
+    <table>
+        <tr><th>From</th><th>To</th><th>Distance (km)</th><th>Travel Time (minutes)</th></tr>
+        <tr>
+            <td>Klarabergsviadukten 90</td>
+            <td>Sveavägen 45</td>
+            <td>9.539446268115125</td>
+            <td>19.07889253623025</td>
+        </tr>
+        <tr>
+            <td>Sveavägen 45</td>
+            <td>Klarabergsviadukten 90</td>
+            <td>6.5712192992285985</td>
+            <td>13.142438598457197</td>
+        </tr>
+    </table>
+
+    <!-- Orders -->
+    <h2>Orders</h2>
+    <table>
+        <tr><th>Order ID</th><th>Store Name</th><th>Delivery Address</th><th>Delivery Date</th></tr>
+        <tr>
+            <td>Store_2</td>
+            <td>Retail Store 2</td>
+            <td>Sveavägen 45, Stockholm, 10250</td>
+            <td>Fri Jan 31 13:12:54 CET 2025</td>
+        </tr>
+        <tr>
+            <td>Store_1</td>
+            <td>Retail Store 1</td>
+            <td>Klarabergsviadukten 90, Stockholm, 10128</td>
+            <td>Fri Jan 31 13:12:54 CET 2025</td>
+        </tr>
+    </table>
+
+    <!-- Items Table -->
+    <h2>Order Items</h2>
+    <h3>Items for Order: Store_2</h3>
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>Invictus</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Olympéa</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Scandal</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>Boss Bottled</td>
+            <td>12</td>
+        </tr>
+    </table>
+    <h3>Items for Order: Store_1</h3>
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>MyWay</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Libre</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Jadore</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Paradox</td>
+            <td>5</td>
+        </tr>
+    </table>
+
+</body>
+</html>

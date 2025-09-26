@@ -1,0 +1,92 @@
+modeltype MM1 uses "platform:/resource/MM1/model/mm1.ecore";
+
+transformation NewTransformation(out targetModel: MM1);
+
+main() {
+    log("Starting transformation...");
+
+    -- Create the first RetailStore
+    object MM1::RetailStore {
+        storeID := 'Store_1';
+        name := 'Retail Store 1';
+
+        location := object MM1::Location {
+            address := 'Klarabergsviadukten 90';
+            city := 'Stockholm';
+            postalCode := 10128;
+        };
+
+        stockesIteams += object MM1::Iteam {
+            itemID := 'Item_1';
+            name := 'MyWay';
+            quantity := 20;
+        };
+
+        stockesIteams += object MM1::Iteam {
+            itemID := 'Item_2';
+            name := 'Libre';
+            quantity := 5;
+        };
+
+        stockesIteams += object MM1::Iteam {
+            itemID := 'Item_3';
+            name := 'Jadore';
+            quantity := 25;
+        };
+
+        stockesIteams += object MM1::Iteam {
+            itemID := 'Item_4';
+            name := 'Paradox';
+            quantity := 5;
+        };
+
+        deliveryWindows += object MM1::TimeInterval {
+            startTime := null 
+        };
+    
+	};
+    -- Create the second RetailStore
+    object MM1::RetailStore {
+        storeID := 'Store_2';
+        name := 'Retail Store 2';
+
+        location := object MM1::Location {
+            address := 'Sveavägen 45';
+            city := 'Stockholm';
+            postalCode := 10250;
+        };
+
+        stockesIteams += object MM1::Iteam {
+            itemID := 'Item_5';
+            name := 'Invictus';
+            quantity := 15;
+        };
+
+        stockesIteams += object MM1::Iteam {
+            itemID := 'Item_6';
+            name := 'Olympéa';
+            quantity := 10;
+        };
+
+        stockesIteams += object MM1::Iteam {
+            itemID := 'Item_7';
+            name := 'Scandal';
+            quantity := 30;
+        };
+
+        stockesIteams += object MM1::Iteam {
+            itemID := 'Item_8';
+            name := 'Boss Bottled';
+            quantity := 12;
+        };
+
+        deliveryWindows += object MM1::TimeInterval {
+            startTime := null 
+        };
+   
+    }
+
+    -> targetModel.createEmptyModel();
+
+   log("Transformation completed with two stores.");
+}

@@ -1,0 +1,73 @@
+[comment encoding = UTF-8 /]
+[**
+ * Module for generating the Delivery Routes Problem Specification.
+ */]
+[module generate('http://www.example.org/mm5', 'http://www.example.org/mm4')]
+[comment @main/]
+
+[**
+ * Main entry point for the generation.
+ * Generates the DeliveryProblemSpec.json file with locations, constraints, and distance matrix data.
+ * @param distanceMatrixModel The root model for MM5 (Distance Matrix).
+ */]
+[template public generateElement(distanceMatrixModel : DistanceMatrix)]
+[comment @main/]
+
+[file ('routing5.json', false, 'UTF-8')]
+{
+    "locations": 
+        [for (location : Location | distanceMatrixModel.location) separator(',\n')]
+        {
+            "orderID": "[location.orderID/]",
+            "address": "[location.address/]"
+        }
+        [/for]
+    ],
+    "distanceMatrix": 
+        [for (distance : Distance | distanceMatrixModel.distance) separator(',\n')]
+        {
+            "from": "[distance.from.orderID/]",
+            "to": "[distance.to.orderID/]",
+            "distance": [distance.distance.toString()/],
+            "travelTime": [distance.travelTime.toString()/]
+        }
+        [/for]
+    ]
+}
+[/file]
+[/template]
+
+[**
+ * Main entry point for MM4 (Order Delivery Constraints) generation.
+ * Generates the DeliveryConstraints.json file with delivery and order constraints data.
+ * @param orderConstraintsModel The root model for MM4 (Order Delivery Constraints).
+ */]
+[template public generateElementMM4(orderConstraintsModel : OrderDeliveryConstraints)]
+[comment @main/]
+
+[file ('routing4.json', false, 'UTF-8')]
+{
+    "constraints": {
+        "deliveryConstraints": 
+            [for (deliveryConstraint : DeliveryConstraint | orderConstraintsModel.orderconstraint.deliveryconstraint) separator(',\n')]
+            {
+                "constraintID": "[deliveryConstraint.constraintID/]",
+                "maximumWeight": [deliveryConstraint.maximumWeight.toString()/],
+                "maximumVolume": [deliveryConstraint.maximumVolume.toString()/],
+                "deliveryTimeFrameStart": "[deliveryConstraint.deliveryTimeFrameStart/]",
+                "deliveryTimeFrameEnd": "[deliveryConstraint.deliveryTimeFrameEnd/]"
+            }
+            [/for]
+        ],
+        "orderConstraints": 
+            [for (orderConstraint : OrderConstraint | orderConstraintsModel.orderconstraint) separator(',\n')]
+            {
+                "constraintID": "[orderConstraint.constraintID/]",
+                "priorityLevel": [orderConstraint.priorityLevel.toString()/]
+            }
+            [/for]
+        ]
+    }
+}
+[/file]
+[/template]

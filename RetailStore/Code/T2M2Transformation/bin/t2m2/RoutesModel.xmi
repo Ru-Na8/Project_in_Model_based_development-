@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mm6:RoutesModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mm6="http://www.example.org/mm6_1">
+  <routes from="Point_0" to="Sveavägen 45" distance="8,62" travelTime="17,24"/>
+  <routes from="Point_0" to="Klarabergsviadukten 90" distance="5,13" travelTime="10,25"/>
+  <routes from="Point_0" to="Sveavägen 45" distance="6,21" travelTime="12,43"/>
+  <routes from="Point_0" to="Klarabergsviadukten 90" distance="17,63" travelTime="35,27"/>
+  <shortestPaths from="Point_0" to="Klarabergsviadukten 90" distance="17,63" travelTime="10,25"/>
+  <shortestPaths from="Point_0" to="Sveavägen 45" distance="6,21" travelTime="17,24"/>
+  <location orderID="Point_0" address="Main Store, Stockholm, 10000"/>
+  <location orderID="Sveavägen 45" address="Sveavägen 45, Stockholm, 10250"/>
+  <location orderID="Klarabergsviadukten 90" address="Klarabergsviadukten 90, Stockholm, 10128"/>
+  <orders orderID="Store_2" name="Retail Store 2" deliveryAddress="Sveavägen 45, Stockholm, 10250" deliveryDate="Thu Jan 30 22:59:22 CET 2025">
+    <items itemName="Invictus" quantity="15"/>
+    <items itemName="Olympéa" quantity="10"/>
+    <items itemName="Scandal" quantity="30"/>
+    <items itemName="Boss Bottled" quantity="12"/>
+  </orders>
+  <orders orderID="Store_1" name="Retail Store 1" deliveryAddress="Klarabergsviadukten 90, Stockholm, 10128" deliveryDate="Thu Jan 30 22:59:22 CET 2025">
+    <items itemName="MyWay" quantity="20"/>
+    <items itemName="Libre" quantity="5"/>
+    <items itemName="Jadore" quantity="25"/>
+    <items itemName="Paradox" quantity="5"/>
+  </orders>
+  <constraints constraintID="DeliveryConstraint_1" maxWeight="100,00" maxVolume="50,00" deliveryTimeStart="" deliveryTimeEnd=""/>
+  <constraints constraintID="DeliveryConstraint_2" maxWeight="150,00" maxVolume="75,00" deliveryTimeStart="" deliveryTimeEnd=""/>
+  <constraints constraintID="DeliveryConstraint_3" maxWeight="200,00" maxVolume="100,00" deliveryTimeStart="" deliveryTimeEnd=""/>
+</mm6:RoutesModel>

@@ -1,0 +1,9 @@
+<mm4:OrderDeliveryConstraints xmlns:mm4="http://www.example.org/mm4">
+  <orderconstraint constraintID="Constraint_Store_1" priorityLevel="1">
+    <deliveryconstraint constraintID="DeliveryConstraint_1" maximumWeight="100" maximumVolume="50"/>
+    <deliveryconstraint constraintID="DeliveryConstraint_2" maximumWeight="150" maximumVolume="75"/>
+  </orderconstraint>
+  <orderconstraint constraintID="Constraint_Store_2" priorityLevel="2">
+    <deliveryconstraint constraintID="DeliveryConstraint_3" maximumWeight="200" maximumVolume="100"/>
+  </orderconstraint>
+</mm4:OrderDeliveryConstraints>

@@ -1,0 +1,50 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/mm2')]
+
+[template public generateOrders(orderModel : mm2::OrderModel)]
+[comment @main/]
+[comment Main entry point for generating the orders JSON file. /]
+
+[file ('OrderSummaryAndContent.json', false, 'UTF-8')]
+{
+    "orders": 
+        [for (order : mm2::Order | orderModel.orders) separator(',\n')]
+        {
+            "orderID": "[order.orderID/]",
+            "name": "[order.name/]",
+            "deliveryDetails": {
+                "address": "[order.deliverydetails.deliveryAddress/]",
+                "date": "[if (order.deliverydetails.deliveryDate <> null)][order.deliverydetails.deliveryDate.toString()/][else]""[/if]"
+            },
+            "items": 
+                [for (item : mm2::OrderIteam | order.orderiteam) separator(',\n')]
+                {
+                    "itemName": "[item.iteamName/]",
+                    "quantity": [item.quantity/]
+                }
+                [/for]
+            ]
+        }
+        [/for]
+    ]
+}
+[/file]
+[/template]
+
+[template public generateLocations(orderModel : mm2::OrderModel)]
+[comment @main/]
+[comment Main entry point for generating the locations JSON file. /]
+
+[file ('OrderLocations_MapsAPIRequest.json', false, 'UTF-8')]
+{
+    "locations": 
+        [for (location : mm2::Location | orderModel.locations) separator(',\n')]
+        {
+            "orderID": "[location.orderID/]",
+            "address": "[location.address/]"
+        }
+        [/for]
+    ]
+}
+[/file]
+[/template]

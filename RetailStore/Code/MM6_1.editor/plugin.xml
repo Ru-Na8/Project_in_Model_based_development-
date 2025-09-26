@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated mm6_1 -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="mm6_1.presentation.Mm6_1ModelWizardID"
+            name="%_UI_Mm6_1ModelWizard_label"
+            class="mm6_1.presentation.Mm6_1ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Mm6_1ModelFile.gif">
+         <description>%_UI_Mm6_1ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated mm6_1 -->
+      <editor
+            id="mm6_1.presentation.Mm6_1EditorID"
+            name="%_UI_Mm6_1Editor_label"
+            icon="icons/full/obj16/Mm6_1ModelFile.gif"
+            extensions="mm6_1"
+            class="mm6_1.presentation.Mm6_1Editor"
+            contributorClass="mm6_1.presentation.Mm6_1ActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

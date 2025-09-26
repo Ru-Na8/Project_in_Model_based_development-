@@ -1,0 +1,74 @@
+modeltype MM3 uses "platform:/resource/MM3/model/mm3.ecore";
+
+transformation SecondM2M(out targetModel: MM3);
+
+main(){
+    log("Starting MM3 transformation...");
+
+    object MM3::Fleet {
+        fleetID := 'Fleet_1';
+        name := 'Delivery Fleet';
+
+        vehicles += object MM3::Vehicle {
+            vehicleID := 'Vehicle_1';
+            name := 'MyWay Vehicle';
+
+            capacity := object MM3::Capacity {
+                capacityID := 'Capacity_1';
+                weight := 200;
+                volume := 100;
+                numberOfItems := 20;
+            };
+
+            vehicletype := object MM3::VehicleType {
+                typeID := 'Type_1';
+                name := 'Standard Type';
+                description := 'Default vehicle type for deliveries';
+            };
+			availability := object MM3::Availability {
+                availabilityID := 'Avail_1';
+                status := 'Available';
+                availabilityStart := null
+            };
+
+            specialcharacteristics += object MM3::SpecialCharacteristics {
+                characteristicID := 'Char_1';
+                name := 'Refrigerated';
+                description := 'Suitable for perishable goods';
+            };
+        };
+
+        vehicles += object MM3::Vehicle {
+            vehicleID := 'Vehicle_2';
+            name := 'Libre Vehicle';
+
+            capacity := object MM3::Capacity {
+                capacityID := 'Capacity_2';
+                weight := 50;
+                volume := 25;
+                numberOfItems := 5;
+            };
+
+            vehicletype := object MM3::VehicleType {
+                typeID := 'Type_2';
+                name := 'Compact Type';
+                description := 'Compact vehicle for small deliveries';
+            };
+
+            availability := object MM3::Availability {
+                availabilityID := 'Avail_2';
+                status := 'Available';
+                availabilityStart := null
+            };
+
+            specialcharacteristics += object MM3::SpecialCharacteristics {
+                characteristicID := 'Char_2';
+                name := 'Electric';
+                description := 'Environmentally friendly vehicle';
+            };
+        };
+    } 
+    -> targetModel.createEmptyModel();
+
+    log("MM3 transformation completed.");
+}

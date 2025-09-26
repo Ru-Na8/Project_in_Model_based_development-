@@ -1,0 +1,139 @@
+{
+    "distanceMatrix": [
+        {
+            "travelTime": 17.23870006178241,
+            "distance": 8.619350030891205,
+            "from": "Point_0",
+            "to": "Sveavägen 45"
+        },
+        {
+            "travelTime": 10.254435833202663,
+            "distance": 5.127217916601332,
+            "from": "Point_0",
+            "to": "Klarabergsviadukten 90"
+        },
+        {
+            "travelTime": 12.426414136220336,
+            "distance": 6.213207068110168,
+            "from": "Point_0",
+            "to": "Sveavägen 45"
+        },
+        {
+            "travelTime": 35.26986984248023,
+            "distance": 17.634934921240117,
+            "from": "Point_0",
+            "to": "Klarabergsviadukten 90"
+        }
+    ],
+    "locations": [
+        {
+            "address": "Main Store, Stockholm, 10000",
+            "orderID": "Point_0"
+        },
+        {
+            "address": "Sveavägen 45, Stockholm, 10250",
+            "orderID": "Sveavägen 45"
+        },
+        {
+            "address": "Klarabergsviadukten 90, Stockholm, 10128",
+            "orderID": "Klarabergsviadukten 90"
+        }
+    ],
+    "orders": [
+        {
+            "orderID": "Store_2",
+            "name": "Retail Store 2",
+            "deliveryDetails": {
+                "date": "",
+                "address": "Sveavägen 45, Stockholm, 10250"
+            },
+            "items": [
+                {
+                    "itemName": "Invictus",
+                    "quantity": 15,
+                    "orderID": "Store_2"
+                },
+                {
+                    "itemName": "Olympéa",
+                    "quantity": 10,
+                    "orderID": "Store_2"
+                },
+                {
+                    "itemName": "Scandal",
+                    "quantity": 30,
+                    "orderID": "Store_2"
+                },
+                {
+                    "itemName": "Boss Bottled",
+                    "quantity": 12,
+                    "orderID": "Store_2"
+                }
+            ]
+        },
+        {
+            "orderID": "Store_1",
+            "name": "Retail Store 1",
+            "deliveryDetails": {
+                "date": "",
+                "address": "Klarabergsviadukten 90, Stockholm, 10128"
+            },
+            "items": [
+                {
+                    "itemName": "MyWay",
+                    "quantity": 20,
+                    "orderID": "Store_1"
+                },
+                {
+                    "itemName": "Libre",
+                    "quantity": 5,
+                    "orderID": "Store_1"
+                },
+                {
+                    "itemName": "Jadore",
+                    "quantity": 25,
+                    "orderID": "Store_1"
+                },
+                {
+                    "itemName": "Paradox",
+                    "quantity": 5,
+                    "orderID": "Store_1"
+                }
+            ]
+        }
+    ],
+    "constraints": {
+        "deliveryConstraints": [
+            {
+                "constraintID": "DeliveryConstraint_1",
+                "deliveryTimeFrameStart": "",
+                "maximumVolume": 50,
+                "maximumWeight": 100,
+                "deliveryTimeFrameEnd": ""
+            },
+            {
+                "constraintID": "DeliveryConstraint_2",
+                "deliveryTimeFrameStart": "",
+                "maximumVolume": 75,
+                "maximumWeight": 150,
+                "deliveryTimeFrameEnd": ""
+            },
+            {
+                "constraintID": "DeliveryConstraint_3",
+                "deliveryTimeFrameStart": "",
+                "maximumVolume": 100,
+                "maximumWeight": 200,
+                "deliveryTimeFrameEnd": ""
+            }
+        ],
+        "orderConstraints": [
+            {
+                "constraintID": "Constraint_Store_1",
+                "priorityLevel": 1
+            },
+            {
+                "constraintID": "Constraint_Store_2",
+                "priorityLevel": 2
+            }
+        ]
+    }
+}

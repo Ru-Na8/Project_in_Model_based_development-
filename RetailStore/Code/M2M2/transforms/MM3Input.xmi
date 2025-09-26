@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mm3="http://www.example.org/mm3" xsi:schemaLocation="http://www.example.org/mm3 ../../MM3/model/mm3.ecore">
+  <mm3:Fleet fleetID="Fleet_1" name="Libre Vehicle" vehicles="/1 /6"/>
+  <mm3:Vehicle vehicleID="Vehicle_1" vehicletype="/3" capacity="/2" availability="/4" specialcharacteristics="/5"/>
+  <mm3:Capacity capacityID="Capacity_1" weight="200" volume="100" numberOfItems="20"/>
+  <mm3:VehicleType typeID="Type_1" name="Standard Type" description="Default vehicle type for deliveries"/>
+  <mm3:Availability availabilityID="Avail_1" status="Available"/>
+  <mm3:SpecialCharacteristics characteristicID="Char_1" name="Refrigerated" description="Suitable for perishable goods"/>
+  <mm3:Vehicle vehicleID="Vehicle_2" vehicletype="/8" capacity="/7" availability="/9" specialcharacteristics="/10"/>
+  <mm3:Capacity capacityID="Capacity_2" weight="50" volume="25" numberOfItems="5"/>
+  <mm3:VehicleType typeID="Type_2" name="Compact Type" description="Compact vehicle for small deliveries"/>
+  <mm3:Availability availabilityID="Avail_2" status="Available"/>
+  <mm3:SpecialCharacteristics characteristicID="Char_2" name="Electric" description="Environmentally friendly vehicle"/>
+</xmi:XMI>

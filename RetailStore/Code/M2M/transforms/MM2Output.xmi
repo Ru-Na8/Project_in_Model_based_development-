@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mm2:OrderModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mm2="http://www.example.org/mm2" xsi:schemaLocation="http://www.example.org/mm2 ../../MM2/model/mm2.ecore">
+  <orders orderID="Store_2" name="Retail Store 2">
+    <orderiteam iteamName="Invictus" quantity="15"/>
+    <orderiteam iteamName="Olympéa" quantity="10"/>
+    <orderiteam iteamName="Scandal" quantity="30"/>
+    <orderiteam iteamName="Boss Bottled" quantity="12"/>
+    <deliverydetails deliveryAddress="Sveavägen 45, Stockholm, 10250"/>
+  </orders>
+  <orders orderID="Store_1" name="Retail Store 1">
+    <orderiteam iteamName="MyWay" quantity="20"/>
+    <orderiteam iteamName="Libre" quantity="5"/>
+    <orderiteam iteamName="Jadore" quantity="25"/>
+    <orderiteam iteamName="Paradox" quantity="5"/>
+    <deliverydetails deliveryAddress="Klarabergsviadukten 90, Stockholm, 10128"/>
+  </orders>
+  <locations orderID="Sveavägen 45" address="Sveavägen 45, Stockholm, 10250"/>
+  <locations orderID="Klarabergsviadukten 90" address="Klarabergsviadukten 90, Stockholm, 10128"/>
+</mm2:OrderModel>

@@ -1,0 +1,42 @@
+{
+    "locations": [
+        {
+            "orderID": "Sveavägen 45",
+            "address": "Sveavägen 45, Stockholm, 10250"
+        }
+,
+        {
+            "orderID": "Klarabergsviadukten 90",
+            "address": "Klarabergsviadukten 90, Stockholm, 10128"
+        }
+    ],
+    "distanceMatrix": [
+        {
+            "from": "Sveavägen 45",
+            "to": "Klarabergsviadukten 90",
+            "distance": 6.5712192992285985,
+            "travelTime": 13.142438598457197
+        }
+,
+        {
+            "from": "Sveavägen 45",
+            "to": "Klarabergsviadukten 90",
+            "distance": 11.771542643553454,
+            "travelTime": 23.54308528710691
+        }
+,
+        {
+            "from": "Klarabergsviadukten 90",
+            "to": "Sveavägen 45",
+            "distance": 9.539446268115125,
+            "travelTime": 19.07889253623025
+        }
+,
+        {
+            "from": "Klarabergsviadukten 90",
+            "to": "Sveavägen 45",
+            "distance": 24.37273660294824,
+            "travelTime": 48.74547320589648
+        }
+    ]
+}
